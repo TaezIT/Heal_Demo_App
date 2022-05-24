@@ -21,38 +21,27 @@ class LoginPhoneNumberViewController: UIViewController {
         setUpVIew()
     }
     func setUpVIew(){
+        tfPhoneNumber.addTarget(self, action: #selector(textFieldCheckEdit(_:)), for: .editingChanged)
+        tfPhoneNumber.addTarget(self, action: #selector(textFieldDidBeginEdit(_:)), for: .editingDidBegin)
+        tfPhoneNumber.addTarget(self, action: #selector(textFieldDidEndEdit(_:)), for: .editingDidEnd)
+        checkValidInTextField()
+        setUpContenView()
+    }
+    func setUpContenView(){
         btnChangeLanguage.layer.cornerRadius = 15
         btnBackScreen.layer.cornerRadius = 16
         btnNextScreen.layer.cornerRadius = 24
-        //btnNextScreen.setTitleColor(.white, for: .normal)
-        viewHoldPhoneNumber.layer.cornerRadius = 28
+        btnNextScreen.setTitleColor(.white, for: .disabled)
         viewHotline.layer.cornerRadius = 24
+        viewHoldPhoneNumber.layer.cornerRadius = 28
         viewHoldPhoneNumber.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         viewHoldPhoneNumber.layer.shadowOpacity = 1
         viewHoldPhoneNumber.layer.shadowRadius = 20
+        viewHoldPhoneNumber.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 0.2).cgColor
         viewHoldPhoneNumber.layer.shadowOffset = CGSize(width: 0, height: 4)
         viewHoldPhoneNumber.layer.borderWidth = 1
-        tfPhoneNumber.addTarget(self, action: #selector(textFieldEdit(_:)), for: .editingChanged)
-//        viewHoldPhoneNumber.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
-        checkValidInTextField()
     }
     let constants = Constants.self
-    func updateTextFieldUI(_ txt: UITextField, toEditing: Bool) {
-        let subviews = txt.superview?.subviews ?? []
-        
-        for sub in subviews {
-            guard sub.tag == 1 else { continue }
-            
-            if let sub = sub as? UILabel {
-                sub.textColor = toEditing ? constants.Color.greenBlue : constants.Color.gray3
-            } else {
-                sub.backgroundColor = toEditing ? constants.Color.greenBlue : constants.Color.neutral05
-            }
-        }
-    }
-    @objc func textFieldEdit(_ textField: UITextField) {
-        checkValidInTextField()
-    }
     private func updateNextButtonUI(enable: Bool) {
         btnNextScreen.isEnabled = enable
         btnNextScreen.alpha = enable ? 1 : 0.3
@@ -75,15 +64,18 @@ class LoginPhoneNumberViewController: UIViewController {
     }
     
     @IBAction func nextToOTPScreen(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "OTPScreenViewController") as? OTPScreenViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
 extension LoginPhoneNumberViewController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    @objc private func textFieldDidBeginEdit(_ textField: UITextField) {
         viewHoldPhoneNumber.layer.borderColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
-        return true
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    @objc private func textFieldDidEndEdit(_ textField: UITextField) {
         viewHoldPhoneNumber.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
     }
-    
+    @objc func textFieldCheckEdit(_ textField: UITextField) {
+        checkValidInTextField()
+    }
 }

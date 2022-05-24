@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1JZ-Dv-Yln">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -43,47 +44,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVz-QY-8B8">
-                                <rect key="frame" x="0.0" y="781" width="414" height="115"/>
+                                <rect key="frame" x="0.0" y="780" width="414" height="116"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep7-2n-pyh">
-                                        <rect key="frame" x="200" y="16" width="198" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-ci-gsP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nI-t8-bhz">
+                                                <rect key="frame" x="16" y="16" width="168" height="50"/>
+                                                <color key="backgroundColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="JeA-pJ-OoF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Đăng nhập">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cjx-Pe-RQc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep7-2n-pyh">
+                                                <rect key="frame" x="200" y="16" width="198" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="pbe-a3-VqD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Tạo tài khoản">
+                                                    <color key="titleColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I4I-Fg-Sui"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="pbe-a3-VqD"/>
+                                            <constraint firstAttribute="bottom" secondItem="7nI-t8-bhz" secondAttribute="bottom" constant="16" id="3Mr-ai-8qW"/>
+                                            <constraint firstItem="7nI-t8-bhz" firstAttribute="leading" secondItem="Dyg-ci-gsP" secondAttribute="leading" constant="16" id="7Db-e7-B71"/>
+                                            <constraint firstItem="ep7-2n-pyh" firstAttribute="top" secondItem="Dyg-ci-gsP" secondAttribute="top" constant="16" id="Cld-7N-Hud"/>
+                                            <constraint firstAttribute="bottom" secondItem="ep7-2n-pyh" secondAttribute="bottom" constant="16" id="Jmw-la-KMy"/>
+                                            <constraint firstItem="7nI-t8-bhz" firstAttribute="width" secondItem="ep7-2n-pyh" secondAttribute="width" multiplier="150:177" id="m0L-oI-N2i"/>
+                                            <constraint firstItem="ep7-2n-pyh" firstAttribute="leading" secondItem="7nI-t8-bhz" secondAttribute="trailing" constant="16" id="mTS-sF-StT"/>
+                                            <constraint firstAttribute="trailing" secondItem="ep7-2n-pyh" secondAttribute="trailing" constant="16" id="r5e-br-hK2"/>
+                                            <constraint firstItem="7nI-t8-bhz" firstAttribute="top" secondItem="Dyg-ci-gsP" secondAttribute="top" constant="16" id="uvI-ZQ-eR6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Tạo tài khoản">
-                                            <color key="titleColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I4I-Fg-Sui"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nI-t8-bhz">
-                                        <rect key="frame" x="8" y="15" width="168" height="50"/>
-                                        <color key="backgroundColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="JeA-pJ-OoF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Đăng nhập">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cjx-Pe-RQc"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="7nI-t8-bhz" firstAttribute="leading" secondItem="KVz-QY-8B8" secondAttribute="leading" constant="16" id="EEl-Nb-oCE"/>
-                                    <constraint firstItem="7nI-t8-bhz" firstAttribute="top" secondItem="KVz-QY-8B8" secondAttribute="top" constant="16" id="Ggb-TJ-BAT"/>
-                                    <constraint firstItem="ep7-2n-pyh" firstAttribute="top" secondItem="KVz-QY-8B8" secondAttribute="top" constant="16" id="K7w-kE-UhK"/>
-                                    <constraint firstAttribute="trailing" secondItem="ep7-2n-pyh" secondAttribute="trailing" constant="16" id="Rue-wg-OW4"/>
-                                    <constraint firstAttribute="height" constant="115" id="UJB-kJ-O7j"/>
-                                    <constraint firstItem="ep7-2n-pyh" firstAttribute="leading" secondItem="7nI-t8-bhz" secondAttribute="trailing" constant="16" id="tSs-ur-QVJ"/>
-                                    <constraint firstItem="7nI-t8-bhz" firstAttribute="width" secondItem="ep7-2n-pyh" secondAttribute="width" multiplier="150:177" id="wI2-rE-4cQ"/>
+                                    <constraint firstItem="Dyg-ci-gsP" firstAttribute="top" secondItem="KVz-QY-8B8" secondAttribute="top" id="PHe-EA-AH3"/>
+                                    <constraint firstItem="Dyg-ci-gsP" firstAttribute="leading" secondItem="KVz-QY-8B8" secondAttribute="leading" id="fSB-F6-K1k"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dyg-ci-gsP" secondAttribute="trailing" id="ska-OX-IrW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hY-GP-Rth">
@@ -94,10 +107,10 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-Nu-qF0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="579"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="NrT-Nu-qF0" secondAttribute="height" multiplier="1:1" constant="-165" id="xnK-QS-pbz"/>
+                                    <constraint firstAttribute="width" secondItem="NrT-Nu-qF0" secondAttribute="height" multiplier="1:1" constant="-136" id="xnK-QS-pbz"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zrs-gC-eaJ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -108,7 +121,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="b81-fI-1Kq">
-                                <rect key="frame" x="149.5" y="604" width="115.5" height="26"/>
+                                <rect key="frame" x="149.5" y="575" width="115.5" height="26"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="pageIndicatorTintColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="0.20433728448275862" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,6 +135,7 @@
                             <constraint firstItem="b81-fI-1Kq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ade-Tq-8DD"/>
                             <constraint firstItem="NrT-Nu-qF0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kcl-ws-wP7"/>
                             <constraint firstAttribute="bottom" secondItem="KVz-QY-8B8" secondAttribute="bottom" id="NFK-w1-HUF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dyg-ci-gsP" secondAttribute="bottom" id="eMH-Y5-n0v"/>
                             <constraint firstItem="9hY-GP-Rth" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fUX-hF-yiT"/>
                             <constraint firstItem="b81-fI-1Kq" firstAttribute="top" secondItem="NrT-Nu-qF0" secondAttribute="bottom" constant="25" id="jKk-ou-oIa"/>
                             <constraint firstItem="NrT-Nu-qF0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lb6-74-nqF"/>
@@ -176,11 +190,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="UBk-J1-hJf"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Tiếp tục">
-                                    <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Tiếp tục">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="nextToOTPScreen:" destination="j9x-YN-dNS" eventType="touchUpInside" id="BNp-w4-x45"/>
                                 </connections>
@@ -272,7 +286,7 @@
                                     <constraint firstAttribute="width" secondItem="BNm-oF-zGi" secondAttribute="height" multiplier="1:1" id="w8S-Ka-ajb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Image-Vector"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Image-Vector" title=" "/>
                                 <connections>
                                     <action selector="backScreenSignup:" destination="j9x-YN-dNS" eventType="touchUpInside" id="Lrk-aQ-QPz"/>
                                 </connections>
@@ -330,7 +344,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xác minh số điện thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VM-bM-21q">
-                                <rect key="frame" x="113" y="53" width="188.5" height="25"/>
+                                <rect key="frame" x="113" y="55.5" width="188.5" height="25"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -343,96 +357,264 @@
                                     <constraint firstAttribute="width" secondItem="6XV-QO-PtJ" secondAttribute="height" multiplier="1:1" id="oIC-rq-0P1"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Img-BackLogin"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Img-BackLogin" title=" "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backLoginScreen:" destination="Brh-dq-Ot4" eventType="touchUpInside" id="K4O-db-hp3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQu-uM-Occ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQu-uM-Occ">
                                 <rect key="frame" x="24" y="798" width="366" height="48"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="PUL-I4-fE4"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Tiếp tục">
-                                    <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
-                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Tiếp tục">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextHomeScreen:" destination="Brh-dq-Ot4" eventType="touchUpInside" id="KJA-cR-Kxs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập mã gồm 4 chữ số đã được gửi đến bạn vào số điện thoại +84 356 461 831" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-QE-PQs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-QE-PQs">
                                 <rect key="frame" x="24" y="121" width="366" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bG7-Ql-uxX">
-                                <rect key="frame" x="36.5" y="184.5" width="341" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bG7-Ql-uxX">
+                                <rect key="frame" x="49" y="184.5" width="316" height="42"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-aO-SOw">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-aO-SOw">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="0Gw-ur-f8Q"/>
                                             <constraint firstAttribute="height" constant="42" id="Gm7-1T-dYH"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZfS-hC-8x9">
-                                        <rect key="frame" x="61" y="0.0" width="36" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZfS-hC-8x9">
+                                        <rect key="frame" x="56" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="3VD-fe-1co"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGT-UQ-2QI">
-                                        <rect key="frame" x="122" y="0.0" width="36" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGT-UQ-2QI">
+                                        <rect key="frame" x="112" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="o3y-7o-jaH"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm9-z9-US1">
-                                        <rect key="frame" x="183" y="0.0" width="36" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm9-z9-US1">
+                                        <rect key="frame" x="168" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="CoP-oM-M39"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zoc-QR-Cxs">
-                                        <rect key="frame" x="244" y="0.0" width="36" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zoc-QR-Cxs">
+                                        <rect key="frame" x="224" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Ygd-7p-Wb0"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4n-oe-SgX">
-                                        <rect key="frame" x="305" y="0.0" width="36" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4n-oe-SgX">
+                                        <rect key="frame" x="280" y="0.0" width="36" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="yfz-rj-OTz"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kus-Oa-S95">
-                                <rect key="frame" x="162" y="343" width="90" height="33.5"/>
+                                <rect key="frame" x="135.5" y="323" width="143.5" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="cLL-wQ-6vq"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Gửi lại mã">
+                                <buttonConfiguration key="configuration" style="plain" title="Gửi lại mã sau 60s">
                                     <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="14"/>
                                     <color key="baseForegroundColor" red="0.17254901960784313" green="0.52549019607843139" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập sai mã xác thực" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cy9-Td-0nc">
-                                <rect key="frame" x="150" y="276.5" width="114.5" height="16.5"/>
+                                <rect key="frame" x="150" y="256.5" width="114.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" red="0.9882352941176471" green="0.14117647058823529" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -451,29 +633,55 @@
                             <constraint firstItem="kus-Oa-S95" firstAttribute="centerX" secondItem="xJe-dB-eX3" secondAttribute="centerX" id="IWz-t1-zh1"/>
                             <constraint firstItem="Dol-yw-Lan" firstAttribute="top" secondItem="6XV-QO-PtJ" secondAttribute="bottom" constant="6" id="JOu-YI-fom"/>
                             <constraint firstItem="cy9-Td-0nc" firstAttribute="centerX" secondItem="xJe-dB-eX3" secondAttribute="centerX" id="KXx-HU-pUF"/>
+                            <constraint firstItem="3VM-bM-21q" firstAttribute="centerY" secondItem="6XV-QO-PtJ" secondAttribute="centerY" id="L1r-ml-QTz"/>
                             <constraint firstItem="JQu-uM-Occ" firstAttribute="leading" secondItem="mDP-qV-cOf" secondAttribute="leading" constant="24" id="LWv-eW-gN4"/>
                             <constraint firstItem="mDP-qV-cOf" firstAttribute="bottom" secondItem="JQu-uM-Occ" secondAttribute="bottom" constant="16" id="OyY-nS-Iga"/>
-                            <constraint firstItem="cy9-Td-0nc" firstAttribute="top" secondItem="bG7-Ql-uxX" secondAttribute="bottom" constant="50" id="UkB-xL-JnH"/>
+                            <constraint firstItem="cy9-Td-0nc" firstAttribute="top" secondItem="bG7-Ql-uxX" secondAttribute="bottom" constant="30" id="UkB-xL-JnH"/>
                             <constraint firstItem="bG7-Ql-uxX" firstAttribute="top" secondItem="RrB-QE-PQs" secondAttribute="bottom" constant="30" id="V6q-Pq-xk0"/>
-                            <constraint firstItem="Dol-yw-Lan" firstAttribute="top" secondItem="3VM-bM-21q" secondAttribute="bottom" constant="12" id="X5P-nW-It3"/>
                             <constraint firstItem="3VM-bM-21q" firstAttribute="centerX" secondItem="xJe-dB-eX3" secondAttribute="centerX" id="gBB-MU-2c0"/>
                             <constraint firstItem="Dol-yw-Lan" firstAttribute="leading" secondItem="mDP-qV-cOf" secondAttribute="leading" id="geX-jE-tAY"/>
                             <constraint firstItem="6XV-QO-PtJ" firstAttribute="leading" secondItem="mDP-qV-cOf" secondAttribute="leading" constant="16" id="vta-oT-FVD"/>
                             <constraint firstItem="kus-Oa-S95" firstAttribute="top" secondItem="cy9-Td-0nc" secondAttribute="bottom" constant="50" id="zzP-2U-rLv"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="btnBackLoginScreen" destination="6XV-QO-PtJ" id="LM8-IL-fCl"/>
+                        <outlet property="btnNextHomeScreen" destination="JQu-uM-Occ" id="8MX-gs-lrB"/>
                         <outlet property="btnResendCode" destination="kus-Oa-S95" id="9ka-Vo-8Hh"/>
                         <outlet property="lblError" destination="cy9-Td-0nc" id="ahN-Qq-TCn"/>
                         <outlet property="lblNotification" destination="RrB-QE-PQs" id="oMR-0k-DCL"/>
-                        <outlet property="nextHomeScreen" destination="JQu-uM-Occ" id="l22-tb-jzB"/>
                         <outlet property="stvOTP" destination="bG7-Ql-uxX" id="t3l-mC-Kle"/>
+                        <outlet property="tfOTP1" destination="Fpb-aO-SOw" id="tgg-Kk-nyF"/>
+                        <outlet property="tfOTP2" destination="ZfS-hC-8x9" id="QJy-qm-BfN"/>
+                        <outlet property="tfOTP3" destination="OGT-UQ-2QI" id="RnT-eH-nGS"/>
+                        <outlet property="tfOTP4" destination="cm9-z9-US1" id="MG5-jw-clz"/>
+                        <outlet property="tfOTP5" destination="zoc-QR-Cxs" id="IwC-eI-cEf"/>
+                        <outlet property="tfOTP6" destination="a4n-oe-SgX" id="sIJ-wV-XbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpK-gn-OFz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721.7391304347827" y="65.625"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="gEI-w3-dsf">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="ogI-Ba-bol" customClass="HomeViewController" customModule="Heal_App_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OAy-qd-EuX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ze6-Cr-VU3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjr-Mf-mL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2477" y="66"/>
         </scene>
     </scenes>
     <resources>
