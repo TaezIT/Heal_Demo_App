@@ -22,12 +22,12 @@ extension NSMutableAttributedString {
             attributes[.foregroundColor] = textColor
         }
         
-        if let alignment = alignment {
-            let paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = alignment
-            
-            attributes[.paragraphStyle] = paragraph
-        }
+//        if let alignment = alignment {
+//            let paragraph = NSMutableParagraphStyle()
+//            paragraph.alignment = alignment
+//            
+//            attributes[.paragraphStyle] = paragraph
+//        }
         
         let string = NSMutableAttributedString(string: text, attributes: attributes)
         self.append(string)

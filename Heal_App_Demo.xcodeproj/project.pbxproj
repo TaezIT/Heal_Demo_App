@@ -13,6 +13,8 @@
 		8F065DFB28338B94006CA560 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F065DFA28338B94006CA560 /* SignUpViewController.swift */; };
 		8F065DFE28338B94006CA560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F065DFC28338B94006CA560 /* Main.storyboard */; };
 		8F065E0328338B95006CA560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F065E0128338B95006CA560 /* LaunchScreen.storyboard */; };
+		8F4AC0302848FFF6009554E0 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4AC02E2848FFF6009554E0 /* PromotionTableViewCell.swift */; };
+		8F4AC0312848FFF6009554E0 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4AC02F2848FFF6009554E0 /* PromotionTableViewCell.xib */; };
 		8F4EDC392835DE2900C3ED3F /* LoginPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EDC382835DE2900C3ED3F /* LoginPhoneNumberViewController.swift */; };
 		8F4EDC3D2835E69800C3ED3F /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EDC3C2835E69800C3ED3F /* NSMutableAttributedString.swift */; };
 		8F4EDC3F283639DD00C3ED3F /* OTPScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EDC3E283639DD00C3ED3F /* OTPScreenViewController.swift */; };
@@ -40,6 +42,15 @@
 		8FB36820283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3681E283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.swift */; };
 		8FB36821283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB3681F283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.xib */; };
 		8FB36823283E14FA00752DA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB36822283E14FA00752DA7 /* Assets.xcassets */; };
+		8FB36825283F308800752DA7 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB36824283F308800752DA7 /* ArticleListModel.swift */; };
+		8FB36827283F3C2500752DA7 /* PromotionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB36826283F3C2500752DA7 /* PromotionListModel.swift */; };
+		8FB36829283F664000752DA7 /* DoctorListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB36828283F664000752DA7 /* DoctorListModel.swift */; };
+		8FB3682B283F6BD900752DA7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3682A283F6BD900752DA7 /* HomeModel.swift */; };
+		8FB3682E283F6D5300752DA7 /* APIUItilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3682D283F6D5300752DA7 /* APIUItilities.swift */; };
+		8FB368302845C20F00752DA7 /* UItilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3682F2845C20F00752DA7 /* UItilities.swift */; };
+		8FB3683228474FEC00752DA7 /* PromotionScreenListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3683128474FEC00752DA7 /* PromotionScreenListModel.swift */; };
+		8FB368362847606C00752DA7 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB368352847606C00752DA7 /* PromotionModel.swift */; };
+		8FB3683828476C1200752DA7 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3683728476C1200752DA7 /* PromotionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +62,8 @@
 		8F065DFD28338B94006CA560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F065E0228338B95006CA560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F065E0428338B95006CA560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F4AC02E2848FFF6009554E0 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
+		8F4AC02F2848FFF6009554E0 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
 		8F4EDC382835DE2900C3ED3F /* LoginPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		8F4EDC3C2835E69800C3ED3F /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		8F4EDC3E283639DD00C3ED3F /* OTPScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreenViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +91,15 @@
 		8FB3681E283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSuggestDoctorTableViewCell.swift; sourceTree = "<group>"; };
 		8FB3681F283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSuggestDoctorTableViewCell.xib; sourceTree = "<group>"; };
 		8FB36822283E14FA00752DA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FB36824283F308800752DA7 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
+		8FB36826283F3C2500752DA7 /* PromotionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionListModel.swift; sourceTree = "<group>"; };
+		8FB36828283F664000752DA7 /* DoctorListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListModel.swift; sourceTree = "<group>"; };
+		8FB3682A283F6BD900752DA7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8FB3682D283F6D5300752DA7 /* APIUItilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUItilities.swift; sourceTree = "<group>"; };
+		8FB3682F2845C20F00752DA7 /* UItilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItilities.swift; sourceTree = "<group>"; };
+		8FB3683128474FEC00752DA7 /* PromotionScreenListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionScreenListModel.swift; sourceTree = "<group>"; };
+		8FB368352847606C00752DA7 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
+		8FB3683728476C1200752DA7 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		94A966957C77D92DD9FC037F /* Pods-Heal_App_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heal_App_Demo.debug.xcconfig"; path = "Target Support Files/Pods-Heal_App_Demo/Pods-Heal_App_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		FE41A3A034EB22D62F598C3B /* Pods_Heal_App_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heal_App_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +161,15 @@
 				8F72B43C2833A2CE00612E0E /* Resource */,
 			);
 			path = Heal_App_Demo;
+			sourceTree = "<group>";
+		};
+		8F4AC02B2848FF0A009554E0 /* PromotionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8F4AC02E2848FFF6009554E0 /* PromotionTableViewCell.swift */,
+				8F4AC02F2848FFF6009554E0 /* PromotionTableViewCell.xib */,
+			);
+			path = PromotionScreen;
 			sourceTree = "<group>";
 		};
 		8F4EDC3A2835E66200C3ED3F /* Views */ = {
@@ -211,6 +242,8 @@
 		8F72B43F2833A36700612E0E /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				8FB368342847506400752DA7 /* PromotionScreen */,
+				8FB368332847505000752DA7 /* HomeScreen */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -218,9 +251,8 @@
 		8F72B4402833A83E00612E0E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				8F8CB5F1283A858400A22098 /* Project */,
-				8F72B4482833A9ED00612E0E /* Font */,
 				8F72B4412833A84700612E0E /* Extension */,
+				8F8CB5F1283A858400A22098 /* Project */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -247,6 +279,7 @@
 		8F72B44F2833AEB400612E0E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8F4AC02B2848FF0A009554E0 /* PromotionScreen */,
 				8F8CB614283DE0C900A22098 /* SignUpScreen */,
 				8F8CB613283DE0A000A22098 /* HomeScreen */,
 			);
@@ -269,6 +302,7 @@
 				8F4EDC382835DE2900C3ED3F /* LoginPhoneNumberViewController.swift */,
 				8F4EDC3E283639DD00C3ED3F /* OTPScreenViewController.swift */,
 				8F8CB5F8283B85A700A22098 /* HomeViewController.swift */,
+				8FB3683728476C1200752DA7 /* PromotionViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -276,6 +310,8 @@
 		8F8CB5F1283A858400A22098 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				8FB3682C283F6D3C00752DA7 /* UItilities */,
+				8F72B4482833A9ED00612E0E /* Font */,
 				8F4EDC42283A388800C3ED3F /* Constant.swift */,
 				8F8CB5F4283B725600A22098 /* ExtensionTF.swift */,
 			);
@@ -312,9 +348,9 @@
 		8F8CB613283DE0A000A22098 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8FB36819283DEE5700752DA7 /* HomeSuggestDoctorTableViewCell */,
 				8F8CB605283DD6BC00A22098 /* SuggestDoctorCollectionViewCell */,
 				8F8CB600283DCBCD00A22098 /* NewsCollectionViewCell */,
+				8FB36819283DEE5700752DA7 /* HomeSuggestDoctorTableViewCell */,
 				8F8CB612283DE08E00A22098 /* NewsAndPromotionTableViewCell */,
 			);
 			path = HomeScreen;
@@ -335,6 +371,35 @@
 				8FB3681F283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.xib */,
 			);
 			path = HomeSuggestDoctorTableViewCell;
+			sourceTree = "<group>";
+		};
+		8FB3682C283F6D3C00752DA7 /* UItilities */ = {
+			isa = PBXGroup;
+			children = (
+				8FB3682D283F6D5300752DA7 /* APIUItilities.swift */,
+				8FB3682F2845C20F00752DA7 /* UItilities.swift */,
+			);
+			path = UItilities;
+			sourceTree = "<group>";
+		};
+		8FB368332847505000752DA7 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8FB36824283F308800752DA7 /* ArticleListModel.swift */,
+				8FB36828283F664000752DA7 /* DoctorListModel.swift */,
+				8FB36826283F3C2500752DA7 /* PromotionListModel.swift */,
+				8FB3682A283F6BD900752DA7 /* HomeModel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		8FB368342847506400752DA7 /* PromotionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8FB3683128474FEC00752DA7 /* PromotionScreenListModel.swift */,
+				8FB368352847606C00752DA7 /* PromotionModel.swift */,
+			);
+			path = PromotionScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F065E0328338B95006CA560 /* LaunchScreen.storyboard in Resources */,
+				8F4AC0312848FFF6009554E0 /* PromotionTableViewCell.xib in Resources */,
 				8F72B4532833AEE800612E0E /* SignUpScreenCollectionViewCell.xib in Resources */,
 				8FB36823283E14FA00752DA7 /* Assets.xcassets in Resources */,
 				8F8CB60D283DDC2800A22098 /* SuggetDoctorCollectionViewCell.xib in Resources */,
@@ -460,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB36829283F664000752DA7 /* DoctorListModel.swift in Sources */,
 				8F065DFB28338B94006CA560 /* SignUpViewController.swift in Sources */,
 				8F8CB5F3283A862D00A22098 /* UIView+Extension.swift in Sources */,
 				8F72B4452833A92700612E0E /* UIButton+Extension.swift in Sources */,
@@ -472,14 +539,23 @@
 				8F8CB5FF283CE0F100A22098 /* Date+Extensions.swift in Sources */,
 				8F4EDC392835DE2900C3ED3F /* LoginPhoneNumberViewController.swift in Sources */,
 				8F4EDC45283A395300C3ED3F /* UIColor+Extension.swift in Sources */,
+				8FB36825283F308800752DA7 /* ArticleListModel.swift in Sources */,
 				8F8CB60C283DDC2800A22098 /* SuggetDoctorCollectionViewCell.swift in Sources */,
+				8FB368302845C20F00752DA7 /* UItilities.swift in Sources */,
+				8FB3683828476C1200752DA7 /* PromotionViewController.swift in Sources */,
 				8F4EDC43283A388800C3ED3F /* Constant.swift in Sources */,
+				8FB3682E283F6D5300752DA7 /* APIUItilities.swift in Sources */,
 				8F8CB5F9283B85A700A22098 /* HomeViewController.swift in Sources */,
 				8FB36820283DF14100752DA7 /* HomeSuggestDoctorTableViewCell.swift in Sources */,
+				8FB368362847606C00752DA7 /* PromotionModel.swift in Sources */,
+				8F4AC0302848FFF6009554E0 /* PromotionTableViewCell.swift in Sources */,
 				8F065DF928338B94006CA560 /* SceneDelegate.swift in Sources */,
+				8FB3683228474FEC00752DA7 /* PromotionScreenListModel.swift in Sources */,
 				8F8CB610283DE08800A22098 /* NewsAndPromotionTableViewCell.swift in Sources */,
 				8F8CB5F5283B725600A22098 /* ExtensionTF.swift in Sources */,
+				8FB36827283F3C2500752DA7 /* PromotionListModel.swift in Sources */,
 				8F72B4472833A95400612E0E /* UILabel+Extension.swift in Sources */,
+				8FB3682B283F6BD900752DA7 /* HomeModel.swift in Sources */,
 				8F4EDC3D2835E69800C3ED3F /* NSMutableAttributedString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

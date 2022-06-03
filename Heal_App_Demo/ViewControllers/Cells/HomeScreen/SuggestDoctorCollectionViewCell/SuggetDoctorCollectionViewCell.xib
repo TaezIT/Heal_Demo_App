@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,11 +26,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="143" height="220"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NfO-Ec-vQW">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzo-4S-pSi">
+                        <rect key="frame" x="0.0" y="0.0" width="143" height="220"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.58823529411764708" green="0.60784313725490191" blue="0.6705882352941176" alpha="0.24294181034482767" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NfO-Ec-vQW">
                         <rect key="frame" x="12" y="12" width="119" height="119"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="NfO-Ec-vQW" secondAttribute="height" multiplier="1:1" id="jNE-HN-p2R"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-CZ-b7s">
                         <rect key="frame" x="12" y="143" width="119" height="18"/>
@@ -43,7 +64,7 @@
                         <color key="textColor" red="0.58823529411764708" green="0.60784313725490191" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img-RateStar-Home" translatesAutoresizingMaskIntoConstraints="NO" id="p5B-je-w4D">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star" translatesAutoresizingMaskIntoConstraints="NO" id="p5B-je-w4D">
                         <rect key="frame" x="14" y="189.5" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="0cM-aw-cNA"/>
@@ -65,11 +86,15 @@
                 <constraint firstItem="p5B-je-w4D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="16N-dG-bM2"/>
                 <constraint firstItem="9Lz-Qy-KoY" firstAttribute="centerY" secondItem="p5B-je-w4D" secondAttribute="centerY" id="1Mj-ZR-6eO"/>
                 <constraint firstItem="suL-ez-poF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="2Ks-TX-9yn"/>
+                <constraint firstAttribute="trailing" secondItem="Pzo-4S-pSi" secondAttribute="trailing" id="6mI-o0-mEo"/>
+                <constraint firstAttribute="bottom" secondItem="Pzo-4S-pSi" secondAttribute="bottom" id="Cp8-gs-Dk1"/>
                 <constraint firstItem="9Lz-Qy-KoY" firstAttribute="leading" secondItem="p5B-je-w4D" secondAttribute="trailing" constant="6" id="Euz-sZ-jLN"/>
                 <constraint firstItem="NfO-Ec-vQW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="G7T-Tf-CM8"/>
                 <constraint firstItem="suL-ez-poF" firstAttribute="top" secondItem="PwD-CZ-b7s" secondAttribute="bottom" constant="4" id="G7i-jd-qHV"/>
+                <constraint firstItem="Pzo-4S-pSi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="S2e-SJ-rIu"/>
                 <constraint firstItem="PwD-CZ-b7s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="Vgs-PU-eoI"/>
                 <constraint firstAttribute="trailing" secondItem="suL-ez-poF" secondAttribute="trailing" constant="12" id="XsG-1J-zw5"/>
+                <constraint firstItem="Pzo-4S-pSi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cJa-Xe-yzF"/>
                 <constraint firstAttribute="trailing" secondItem="9Lz-Qy-KoY" secondAttribute="trailing" constant="20" id="dJu-yq-dHq"/>
                 <constraint firstItem="PwD-CZ-b7s" firstAttribute="top" secondItem="NfO-Ec-vQW" secondAttribute="bottom" constant="12" id="gPq-dD-2lI"/>
                 <constraint firstItem="NfO-Ec-vQW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="hBC-6B-5Xk"/>
@@ -78,10 +103,19 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p5B-je-w4D" secondAttribute="bottom" constant="14" id="kgL-5h-zZw"/>
             </constraints>
             <size key="customSize" width="143" height="220"/>
+            <connections>
+                <outlet property="imgIllustration" destination="NfO-Ec-vQW" id="Afd-pG-weR"/>
+                <outlet property="lblMajor" destination="suL-ez-poF" id="G9l-yT-WLm"/>
+                <outlet property="lblName" destination="PwD-CZ-b7s" id="ZBe-ta-SzQ"/>
+                <outlet property="lblRate" destination="9Lz-Qy-KoY" id="g02-C9-fHc"/>
+            </connections>
             <point key="canvasLocation" x="205.07246376811597" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Img-RateStar-Home" width="12" height="12"/>
+        <image name="icon-star" width="12" height="12"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
