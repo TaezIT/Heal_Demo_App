@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import CoreMedia
 
 class HomeSuggestDoctorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cltvSuggestDoctor: UICollectionView!
     
     var doctorList: [DoctorListModel]?
-
+    var homeModel :[HomeModel]?
+    weak var delegate: NewsAndPromotionTableViewCellProtocol?
     override func awakeFromNib() {
         super.awakeFromNib()
         cltvSuggestDoctor.register(UINib(nibName: "SuggetDoctorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SuggetDoctorCollectionViewCell")
@@ -25,10 +27,14 @@ class HomeSuggestDoctorTableViewCell: UITableViewCell {
         self.doctorList = doctorList
         cltvSuggestDoctor.reloadData()
     }
-    
+        
+    @IBAction func nextScreen(_ sender: Any) {
+        if let doctorList = doctorList {
+        delegate?.didTapSeeAll(choose: chooseScreen.doctorScreen)
+        }
+    }
 }
 extension HomeSuggestDoctorTableViewCell: UICollectionViewDelegate {
-    
 }
 
 extension HomeSuggestDoctorTableViewCell:UICollectionViewDelegateFlowLayout {
@@ -42,14 +48,13 @@ extension HomeSuggestDoctorTableViewCell:UICollectionViewDelegateFlowLayout {
 
 extension HomeSuggestDoctorTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return  doctorList?.count ?? 0
+        return  doctorList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SuggetDoctorCollectionViewCell", for: indexPath) as! SuggetDoctorCollectionViewCell
         cell.configureViews(doctor: doctorList?[indexPath.item])
         return cell
-        
     }
 }
 

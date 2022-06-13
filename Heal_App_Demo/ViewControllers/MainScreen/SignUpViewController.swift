@@ -16,18 +16,27 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var buttonSignUp: UIButton!
     @IBOutlet weak var buttonSignIn: UIButton!
-    var  currentPage = 0
+    
     let gradientLayer = CAGradientLayer()
+    var currentPage = 0 {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return}
+                
+                self.setUpPageControl(currentpage: self.currentPage)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewImageBackground.register(UINib(nibName: "SignUpScreenCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SignUpScreenCollectionViewCell")
         collectionViewImageBackground.delegate = self
         collectionViewImageBackground.dataSource = self
-        buttonSignIn.configureButton()
-        buttonSignUp.configureButtonFrame()
+        setUpGradient()
     }
-
-    override func viewDidLayoutSubviews() {
+    
+    func setUpGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(red: 0.651, green: 0.945, blue: 0.969, alpha: 1).cgColor, UIColor(red: 0.953, green: 0.961, blue: 0.984, alpha: 1).cgColor]
         gradient.locations = [0, 1]
@@ -40,6 +49,9 @@ class SignUpViewController: UIViewController {
         viewBackground.layer.addSublayer(gradient)
     }
     
+    func setUpPageControl(currentpage: Int) {
+        pcIntro.currentPage = currentpage
+    }
     
     @IBAction func btnSignIn(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginPhoneNumberViewController") as? LoginPhoneNumberViewController
@@ -73,10 +85,14 @@ extension SignUpViewController: UICollectionViewDataSource {
 }
 
 extension SignUpViewController: UICollectionViewDelegateFlowLayout {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentPage = Int(scrollView.contentOffset.x/UIScreen.main.bounds.width)
+        self.currentPage = currentPage
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionViewImageBackground.frame.width, height: collectionViewImageBackground.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pcIntro.currentPage = indexPath.row
+        
     }
 }

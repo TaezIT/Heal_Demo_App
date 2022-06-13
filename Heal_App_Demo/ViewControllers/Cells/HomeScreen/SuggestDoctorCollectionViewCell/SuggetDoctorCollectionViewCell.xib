@@ -108,6 +108,7 @@
                 <outlet property="lblMajor" destination="suL-ez-poF" id="G9l-yT-WLm"/>
                 <outlet property="lblName" destination="PwD-CZ-b7s" id="ZBe-ta-SzQ"/>
                 <outlet property="lblRate" destination="9Lz-Qy-KoY" id="g02-C9-fHc"/>
+                <outlet property="viewBG" destination="Pzo-4S-pSi" id="g5V-h4-yZ7"/>
             </connections>
             <point key="canvasLocation" x="205.07246376811597" y="153.34821428571428"/>
         </collectionViewCell>

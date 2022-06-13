@@ -8,5 +8,6 @@ target 'Heal_App_Demo' do
   # Pods for Heal_App_Demo
 	pod 'Alamofire', '5.4.3'
   pod 'SDWebImage', '5.12.0'
-
+  pod 'SDWebView'
+  pod 'ToastViewSwift'
 end

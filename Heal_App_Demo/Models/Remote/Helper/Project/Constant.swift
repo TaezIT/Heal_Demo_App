@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol NewsAndPromotionTableViewCellProtocol: NSObject {
+    func didTapSeeAll(choose: chooseScreen)
+    func moveDetailsScreen(choose: chooseScreen, index: Int)
+}
 struct Constants {
     
     static let locale = Locale(identifier: "vi_VN")
@@ -153,4 +157,9 @@ extension Constants {
             
         }
     }
+}
+enum chooseScreen{
+    case newsScreen
+    case promotionScreen
+    case doctorScreen
 }

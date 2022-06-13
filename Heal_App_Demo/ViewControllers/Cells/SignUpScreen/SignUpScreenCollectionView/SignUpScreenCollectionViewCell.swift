@@ -13,8 +13,6 @@ class SignUpScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelIntro: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        labelSubTittle.configureLabel2()
-        labelIntro.configureLabel()
     }
     func configure( with modelSign: ModelSignUp){
         self.imageCollectionView.image = UIImage(named: modelSign.imageBackground)

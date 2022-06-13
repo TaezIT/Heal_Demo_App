@@ -38,23 +38,27 @@ class HomeViewController: UIViewController {
         //self.showLoaderView()
         APIUtilities.requestHomeFeed { [weak self] patientNewFeed, error in
             guard let self = self else { return}
-          //  self.dismissLoaderView()
+            //  self.dismissLoaderView()
             self.refreshControl.endRefreshing()
-
+            
             guard let patientNewFeed = patientNewFeed, error == nil else {
                 return
             }
-
+            
             self.homeModel = patientNewFeed
-
+            
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
-
+                
                 self.tbvHome.reloadData()
             }
         }
     }
-   
+    @IBAction func nextUserInforScreen(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UserInfoViewController") as? UserInfoViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,20 +78,52 @@ extension HomeViewController: UITableViewDataSource {
         if indexPath.item == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsAndPromotionTableViewCell", for: indexPath) as! NewsAndPromotionTableViewCell
             cell.configureViews(articleList: homeModel?.articleList)
+            cell.delegate = self
             return cell
         }
         if indexPath.item == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsAndPromotionTableViewCell", for: indexPath) as! NewsAndPromotionTableViewCell
             cell.configureViews(promotionList: homeModel?.promotionList)
+            cell.delegate = self
             return cell
         }
         if indexPath.item == 2 {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "HomeSuggestDoctorTableViewCell", for: indexPath) as! HomeSuggestDoctorTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeSuggestDoctorTableViewCell", for: indexPath) as! HomeSuggestDoctorTableViewCell
             cell.configure(doctorList: homeModel?.doctorList)
+            cell.delegate = self
             return cell
         }
-        fatalError()
+        return UITableViewCell()
     }
-    
-    
 }
+extension HomeViewController: NewsAndPromotionTableViewCellProtocol {
+
+    func didTapSeeAll(choose: chooseScreen) {
+        switch choose {
+        case .newsScreen:
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case .promotionScreen:
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PromotionViewController") as? PromotionViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case.doctorScreen:
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DoctorsViewController") as? DoctorsViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    func moveDetailsScreen(choose: chooseScreen, index: Int) {
+        switch choose {
+        case .newsScreen:
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController
+            vc!.linkURL = homeModel?.articleList[index].link ?? ""
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case .promotionScreen:
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController
+            vc!.linkURL = homeModel?.promotionList[index].link ?? ""
+            self.navigationController?.pushViewController(vc!, animated: true)
+        case .doctorScreen:
+            return
+        }
+    }
+}
+

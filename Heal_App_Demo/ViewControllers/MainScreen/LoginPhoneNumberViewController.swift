@@ -48,15 +48,17 @@ class LoginPhoneNumberViewController: UIViewController {
     }
     func checkValidInTextField() {
         let phoneNumber = (tfPhoneNumber.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        var numberCurrent = phoneNumber.count >= 9
+        var numberCurrent = phoneNumber.count == 9
         if phoneNumber.hasPrefix("0"){
-            numberCurrent = phoneNumber.count >= 10
+            numberCurrent = phoneNumber.count == 10
         }
         updateNextButtonUI(enable: numberCurrent)
     }
-//    func checkNumberInTextFied(_ textField: UITextField){
-//        for find in textField.text. - 1 {
-//
+//    func checkNumberInTextFied(){
+//        for find in 0..<(tfPhoneNumber.text?.count ?? 1) {
+//            if () {
+//                
+//            }
 //        }
 //    }
     @IBAction func backScreenSignup(_ sender: Any) {
@@ -66,6 +68,7 @@ class LoginPhoneNumberViewController: UIViewController {
     @IBAction func nextToOTPScreen(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "OTPScreenViewController") as? OTPScreenViewController
         self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.valuePhoneNumber = tfPhoneNumber.text ?? ""
     }
 }
 extension LoginPhoneNumberViewController: UITextFieldDelegate {

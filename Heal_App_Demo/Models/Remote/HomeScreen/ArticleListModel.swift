@@ -16,17 +16,17 @@ class ArticleListModel {
     var created_at: String?
     var category_name: String?
     var link: String?
-     
-   
-   convenience init(id: Int?,
-         category_id: Int?,
-         title: String?,
-         slug: String?,
-         picture: String?,
-         picture_caption: String?,
-         created_at: String?,
-         category_name: String?,
-         link: String?) {
+    
+    
+    convenience init(id: Int?,
+                     category_id: Int?,
+                     title: String?,
+                     slug: String?,
+                     picture: String?,
+                     picture_caption: String?,
+                     created_at: String?,
+                     category_name: String?,
+                     link: String?) {
         self.init()
         self.id = id
         self.category_id = category_id
@@ -40,44 +40,32 @@ class ArticleListModel {
     }
     convenience init( json: [String: Any]) {
         self.init()
-        for(key,value) in json {
-            if key == "id", let wrapValue = value as? Int {
-                let jsonValue = wrapValue
-                self.id = jsonValue
-            }
-            if key == "category_id", let wrapValue = value as? Int  {
-                let jsonValue = wrapValue
-                self.category_id = jsonValue
-            }
-            if key == "title", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.title = jsonValue
-            }
-            if key == "slug", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.slug = jsonValue
-            }
-            if key == "picture", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.picture = jsonValue
-            }
-            if key == "picture_caption", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.picture_caption = jsonValue
-            }
-            if key == "created_at", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.created_at = jsonValue
-            }
-            if key == "category_name", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.category_name = jsonValue
-            }
-            if key == "link", let wrapValue = value as? String {
-                let jsonValue = wrapValue
-                self.link = jsonValue
-            }
-            
+        if let wrapValue = json["id"] as? Int {
+            self.id = wrapValue
+        }
+        if let wrapValue = json["category_id"] as? Int  {
+            self.category_id = wrapValue
+        }
+        if let wrapValue = json["title"] as? String {
+            self.title = wrapValue
+        }
+        if let wrapValue = json["slug"] as? String {
+            self.slug = wrapValue
+        }
+        if let wrapValue = json["picture"] as? String {
+            self.picture = wrapValue
+        }
+        if let wrapValue = json["picture_caption"] as? String {
+            self.picture_caption = wrapValue
+        }
+        if let wrapValue = json["created_at"] as? String {
+            self.created_at = wrapValue
+        }
+        if let wrapValue = json["category_name"] as? String {
+            self.category_name = wrapValue
+        }
+        if let wrapValue = json["link"] as? String {
+            self.link = wrapValue
         }
         
     }

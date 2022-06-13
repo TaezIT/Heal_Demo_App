@@ -9,6 +9,7 @@ import UIKit
 
 class SuggetDoctorCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var viewBG: UIView!
     @IBOutlet weak var imgIllustration: UIImageView!
     @IBOutlet weak var lblRate: UILabel!
     @IBOutlet weak var lblMajor: UILabel!

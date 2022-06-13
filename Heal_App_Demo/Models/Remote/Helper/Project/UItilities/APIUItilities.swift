@@ -23,9 +23,26 @@ class APIUtilities{
         jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
     }
     static func requestPromotionFeed(completionHandler: ((PromotionModel?,APIError?)->Void)?) {
-        let tailStrURLPromotion = "/hdhuy179/ef03ed850ad56f0136fe3c5916b3280b/raw/Training_Intern_BasicApp_Promotion"
-        jsonResponseObject(tailStrURL: tailStrURLPromotion, method: .get, headers: [:], completionHandler: completionHandler)
+        let tailStrURL = "/hdhuy179/ef03ed850ad56f0136fe3c5916b3280b/raw/Training_Intern_BasicApp_Promotion"
+        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
     }
+    static func requestNewsFeed(completionHandler: ((NewsModel?,APIError?)->Void)?) {
+        let tailStrURL = "/hdhuy179/84d1dfe96f2c0ab1ddea701df352a7a6/raw"
+        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
+    }
+    static func requestDoctorFeed(completionHandler: ((DoctorModel?,APIError?)->Void)?) {
+        let tailStrURL = "/hdhuy179/9ac0a89969b46fb67bc7d1a8b94d180e/raw"
+        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
+    }
+    static func requestUserInfor(completionHandler: ((UserModel?,APIError?)->Void)?) {
+        let tailStrURL = "/hdhuy179/7883b8f11ea4b25cf6d3822c67049606/raw/Training_Intern_BasicApp_UserInfo"
+        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
+    }
+    static func requestLocationInfor(completionHandler: ((LocationModel?,APIError?)->Void)?) {
+        let tailStrURL = "/hdhuy179/7883b8f11ea4b25cf6d3822c67049606/raw"
+        jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
+    }
+    
     static private func jsonResponseObject<T: JsonInitObject>(tailStrURL: String, method :HTTPMethod, headers: HTTPHeaders, completionHandler:((T?,APIError?)->Void)?) {
         jsonResponse(tailStrURL: tailStrURL, isPublicAPI:false, method: method, headers: headers) { response,severCode,severMessage in
             
@@ -47,7 +64,7 @@ class APIUtilities{
             }
             
         }
-    
+        
     }
     static private func jsonResponse(tailStrURL: String,
                                      isPublicAPI: Bool,
@@ -59,17 +76,17 @@ class APIUtilities{
         guard let url = URL (string: domain + tailStrURL) else { return }
         AF.request(url, method: method, parameters: parameters,encoding: encoding, headers: headers)
             .responseJSON { response in
-            var severCode: Int? = nil
-            var severMessage: String? = nil
-            switch response.result {
-            case .success(let value):
-                severCode = (value as? [String: Any])?[responseCodeKey] as? Int
-                severMessage = (value as? [String: Any])?[responseMessageKey] as? String
-            case .failure(_):
-                break
+                var severCode: Int? = nil
+                var severMessage: String? = nil
+                switch response.result {
+                case .success(let value):
+                    severCode = (value as? [String: Any])?[responseCodeKey] as? Int
+                    severMessage = (value as? [String: Any])?[responseMessageKey] as? String
+                case .failure(_):
+                    break
+                }
+                completionHandler?(response,severCode,severMessage)
             }
-            completionHandler?(response,severCode,severMessage)
-        }
         
     }
 }
