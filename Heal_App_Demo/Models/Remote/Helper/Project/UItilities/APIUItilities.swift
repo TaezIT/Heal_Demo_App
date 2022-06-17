@@ -12,7 +12,7 @@ import Alamofire
 protocol JsonInitObject: NSObject {
     init(json: [String: Any])
 }
-
+var user = UserInfoViewController()
 class APIUtilities{
     static let domain = "https://gist.githubusercontent.com"
     static let responseDataKey = "data"
@@ -38,14 +38,14 @@ class APIUtilities{
         let tailStrURL = "/hdhuy179/7883b8f11ea4b25cf6d3822c67049606/raw/Training_Intern_BasicApp_UserInfo"
         jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
     }
-    static func requestLocationInfor(completionHandler: ((LocationModel?,APIError?)->Void)?) {
-        let tailStrURL = "/hdhuy179/7883b8f11ea4b25cf6d3822c67049606/raw"
+    
+    static func requestLocationInfor(province: String, district: String, ward: String, completionHandler: ((LocationModel?,APIError?)->Void)?) {
+        let tailStrURL = "/hdhuy179/7883b8f11ea4b25cf6d3822c67049606/raw/province_code=" + province + "&district_code=" + district + "&ward_code=" + ward
         jsonResponseObject(tailStrURL: tailStrURL, method: .get, headers: [:], completionHandler: completionHandler)
     }
     
     static private func jsonResponseObject<T: JsonInitObject>(tailStrURL: String, method :HTTPMethod, headers: HTTPHeaders, completionHandler:((T?,APIError?)->Void)?) {
         jsonResponse(tailStrURL: tailStrURL, isPublicAPI:false, method: method, headers: headers) { response,severCode,severMessage in
-            
             switch response.result {
             case .success(let value):
                 guard severCode == 200 else {
@@ -62,9 +62,35 @@ class APIUtilities{
             case .failure(let error):
                 completionHandler?(nil, .unowned(error))
             }
-            
         }
-        
+    }
+    static private func jsonResponseArray<T: JsonInitObject>(tailStrURL: String, method :HTTPMethod, headers: HTTPHeaders, completionHandler:(([T]?,APIError?)->Void)?) {
+        jsonResponse(tailStrURL: tailStrURL, isPublicAPI:false, method: method, headers: headers) { response,severCode,severMessage in
+            switch response.result {
+            case .success(let value):
+                guard severCode == 200 else {
+                    completionHandler?(nil, .severError(severCode, severMessage))
+                    return
+                }
+                
+                guard let responseDict = value as? [String: Any],
+                      let dataDicts = responseDict[responseDataKey] as? [[String: Any]] else {
+                    completionHandler?(nil, .reposeFormatError)
+                    return
+                }
+                
+                var objs: [T] = []
+                
+                for dataDict in dataDicts {
+                    objs.append(T(json: dataDict))
+                }
+                
+                completionHandler?(objs, nil)
+                
+            case .failure(let error):
+                completionHandler?(nil, .unowned(error))
+            }
+        }
     }
     static private func jsonResponse(tailStrURL: String,
                                      isPublicAPI: Bool,

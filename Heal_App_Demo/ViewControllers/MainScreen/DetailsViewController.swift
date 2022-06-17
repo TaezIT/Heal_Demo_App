@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController {
                 idvLoadDetail.isHidden = false
             }else {
                 idvLoadDetail.stopAnimating()
+                idvLoadDetail.isHidden = true
             }
         }
     }

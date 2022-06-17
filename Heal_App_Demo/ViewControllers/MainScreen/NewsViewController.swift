@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 class NewsViewController: UIViewController {
     
+    
+    @IBOutlet weak var lblTittle: UILabel!
+    @IBOutlet weak var viwContent: UIImageView!
+    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var tbvNews: UITableView!
     lazy var refreshControl: UIRefreshControl = {
         let rfc  = UIRefreshControl()
@@ -21,6 +25,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvNews.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
+        tbvNews.register(UINib(nibName: "TittleTableViewCell", bundle: nil), forCellReuseIdentifier: "TittleTableViewCell")
         self.refreshControl.addTarget(self, action: #selector(fetchNewsFeed), for: .valueChanged)
         tbvNews.refreshControl = refreshControl
         tbvNews.dataSource = self
@@ -44,14 +49,18 @@ class NewsViewController: UIViewController {
             }
         }
     }
-    
     @IBAction func backHomeScreen(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 102
+        if indexPath.row == 0 {
+            return 310
+        }
+        else {
+            return 102
+        }
     }
     
 }
@@ -67,9 +76,16 @@ extension NewsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
-        cell.configureViews(news: newsModel?.newsScreenList[indexPath.row])
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TittleTableViewCell", for: indexPath) as! TittleTableViewCell
+            cell.configureViews(news: newsModel?.newsScreenList[indexPath.row])
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
+            cell.configureViews(news: newsModel?.newsScreenList[indexPath.row])
+            return cell
+        }
     }
     
     

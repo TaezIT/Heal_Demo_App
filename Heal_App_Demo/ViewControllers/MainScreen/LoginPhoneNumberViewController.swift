@@ -20,6 +20,7 @@ class LoginPhoneNumberViewController: UIViewController {
         super.viewDidLoad()
         setUpVIew()
     }
+    
     func setUpVIew(){
         tfPhoneNumber.addTarget(self, action: #selector(textFieldCheckEdit(_:)), for: .editingChanged)
         tfPhoneNumber.addTarget(self, action: #selector(textFieldDidBeginEdit(_:)), for: .editingDidBegin)
@@ -27,7 +28,8 @@ class LoginPhoneNumberViewController: UIViewController {
         checkValidInTextField()
         setUpContenView()
     }
-    func setUpContenView(){
+    
+    func setUpContenView() {
         btnChangeLanguage.layer.cornerRadius = 15
         btnBackScreen.layer.cornerRadius = 16
         btnNextScreen.layer.cornerRadius = 24
@@ -41,6 +43,7 @@ class LoginPhoneNumberViewController: UIViewController {
         viewHoldPhoneNumber.layer.shadowOffset = CGSize(width: 0, height: 4)
         viewHoldPhoneNumber.layer.borderWidth = 1
     }
+    
     let constants = Constants.self
     private func updateNextButtonUI(enable: Bool) {
         btnNextScreen.isEnabled = enable
@@ -53,14 +56,9 @@ class LoginPhoneNumberViewController: UIViewController {
             numberCurrent = phoneNumber.count == 10
         }
         updateNextButtonUI(enable: numberCurrent)
+        
     }
-//    func checkNumberInTextFied(){
-//        for find in 0..<(tfPhoneNumber.text?.count ?? 1) {
-//            if () {
-//                
-//            }
-//        }
-//    }
+    
     @IBAction func backScreenSignup(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

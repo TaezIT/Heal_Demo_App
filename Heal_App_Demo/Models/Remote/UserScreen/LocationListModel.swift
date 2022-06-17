@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class LocationListModel {
+class LocationModel: NSObject, JsonInitObject {
     var province_name: String?
     var district_name: String?
     var ward_name: String?
@@ -18,7 +18,7 @@ class LocationListModel {
         self.district_name = district_name
         self.ward_name = ward_name
     }
-    convenience init(json: [String: Any]) {
+    required convenience init(json: [String: Any]) {
         self.init()
         if let wrapValue = json["province_name"] as? String {
             self.province_name = wrapValue

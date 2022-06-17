@@ -21,7 +21,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="PromotionTableViewCell" customModule="Heal_App_Demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="337" height="102"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PromotionTableViewCell" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PromotionTableViewCell" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="337" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -57,7 +57,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" red="0.98039215803146362" green="0.98039215803146362" blue="0.98039215803146362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="qb3-c5-qaY" firstAttribute="leading" secondItem="JDa-30-iOi" secondAttribute="trailing" constant="16" id="04k-Ia-gtj"/>
                     <constraint firstAttribute="trailing" secondItem="QsN-12-pjv" secondAttribute="trailing" constant="18" id="3Wu-np-eVn"/>

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 class PromotionViewController: UIViewController {
     
+    @IBOutlet weak var viwTittle: UIView!
     @IBOutlet weak var tbvPromotion: UITableView!
     lazy var refreshControl: UIRefreshControl = {
         let rfc  = UIRefreshControl()
@@ -26,6 +27,16 @@ class PromotionViewController: UIViewController {
         tbvPromotion.dataSource = self
         tbvPromotion.refreshControl = refreshControl
         fetchPromotionNewsFeed()
+        configureViews()
+    }
+    func configureViews(){
+        viwTittle.layer.cornerRadius = 8
+        viwTittle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        viwTittle.layer.shadowOpacity = 1
+        viwTittle.layer.shadowRadius = 25
+        viwTittle.layer.shadowOffset = CGSize(width: 0, height: 4)
+        viwTittle.clipsToBounds = false
+       
     }
     @objc func fetchPromotionNewsFeed() {
         //self.showLoaderView()
@@ -68,7 +79,7 @@ extension PromotionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PromotionTableViewCell", for: indexPath) as! PromotionTableViewCell
         cell.configureViews(promotion: promotionModel?.promotionScreenList[indexPath.row])
-//        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
 }

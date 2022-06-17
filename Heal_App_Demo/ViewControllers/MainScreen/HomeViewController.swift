@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        viewHoldTBV.cornerRadius = 25
+        viewHoldTBV.cornerRadius = 8
         imgAvatar.cornerRadius = 21
     }
     @objc func fetchPatientNewFeed() {
@@ -54,12 +54,16 @@ class HomeViewController: UIViewController {
             }
         }
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("\(homeModel?.articleList.count)")
+//    }
     @IBAction func nextUserInforScreen(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UserInfoViewController") as? UserInfoViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }
+
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.item == 2 {
@@ -96,8 +100,9 @@ extension HomeViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 }
-extension HomeViewController: NewsAndPromotionTableViewCellProtocol {
 
+extension HomeViewController: NewsAndPromotionTableViewCellProtocol {
+    
     func didTapSeeAll(choose: chooseScreen) {
         switch choose {
         case .newsScreen:

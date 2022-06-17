@@ -10,4 +10,5 @@ target 'Heal_App_Demo' do
   pod 'SDWebImage', '5.12.0'
   pod 'SDWebView'
   pod 'ToastViewSwift'
+  pod 'IQKeyboardManagerSwift'
 end
