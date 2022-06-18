@@ -73,7 +73,7 @@ extension PromotionViewController: UITableViewDataSource {
         navigationController?.pushViewController(vc!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return promotionModel?.promotionScreenList.count ?? 1
+        return promotionModel?.promotionScreenList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

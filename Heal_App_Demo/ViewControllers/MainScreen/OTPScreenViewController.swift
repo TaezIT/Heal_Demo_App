@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 class OTPScreenViewController: UIViewController, UITextFieldDelegate {
     
@@ -62,6 +63,12 @@ class OTPScreenViewController: UIViewController, UITextFieldDelegate {
             .attrStr(text: "+84 \(displayPhoneNumber)", font: fontNumber, textColor: tailColor, alignment: nil)
         lblNotification.attributedText = attributedNoti
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        IQKeyboardManager.shared.previousNextDisplayMode = .Default
     }
     
     private func updateAPIErrorLabel(error: String?) {
@@ -125,6 +132,8 @@ class OTPScreenViewController: UIViewController, UITextFieldDelegate {
     //    ----------- ----------- ----------- -----------
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         
         registerObserver()
         clearCurrentOTP()

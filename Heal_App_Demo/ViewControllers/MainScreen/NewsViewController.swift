@@ -72,7 +72,7 @@ extension NewsViewController: UITableViewDataSource {
         navigationController?.pushViewController(vc!, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsModel?.newsScreenList.count ?? 1
+        return newsModel?.newsScreenList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

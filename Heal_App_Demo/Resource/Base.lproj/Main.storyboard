@@ -742,7 +742,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PromotionTableViewCell" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-KC-kcb">
                                 <rect key="frame" x="0.0" y="157" width="414" height="705"/>
-                                <color key="backgroundColor" red="0.98039215800000001" green="0.98039215800000001" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
                         </subviews>
@@ -1265,7 +1265,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nữ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFx-Nd-cqZ">
-                                                                <rect key="frame" x="20" y="9" width="40" height="19.5"/>
+                                                                <rect key="frame" x="29" y="9" width="31" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="14"/>
                                                                 <color key="textColor" red="0.27843137254901962" green="0.29019607843137252" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1274,7 +1274,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="WFQ-MG-7zV" firstAttribute="centerY" secondItem="w1T-VC-NNn" secondAttribute="centerY" id="68o-C0-p4d"/>
-                                                            <constraint firstItem="DFx-Nd-cqZ" firstAttribute="leading" secondItem="WFQ-MG-7zV" secondAttribute="trailing" id="6A2-SU-xk4"/>
+                                                            <constraint firstItem="DFx-Nd-cqZ" firstAttribute="leading" secondItem="WFQ-MG-7zV" secondAttribute="trailing" constant="9" id="6A2-SU-xk4"/>
                                                             <constraint firstItem="DFx-Nd-cqZ" firstAttribute="centerY" secondItem="w1T-VC-NNn" secondAttribute="centerY" id="8Oe-N7-LjJ"/>
                                                             <constraint firstAttribute="width" constant="60" id="WiT-Tt-QPW"/>
                                                             <constraint firstAttribute="trailing" secondItem="DFx-Nd-cqZ" secondAttribute="trailing" id="Ygm-7m-aLU"/>
